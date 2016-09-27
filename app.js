@@ -24,9 +24,9 @@ $(document).ready(function(){
 		var html = "";
 		$.each(results, function(index,value){
 	    	html += '<p>' + value.snippet.title + '</p>';
-	    	console.log(value.snippet.title);
 	    	//show thumbnails, make images clickable
-	    	html += '<img src= "' + value.snippet.thumbnails.medium.url + '">';
+	    	html += '<a target="_blank" href="https://www.youtube.com/embed/' + 
+	    		value.id.videoId + '"><img src= "' + value.snippet.thumbnails.medium.url + '"></a>';
 	  	});
 		$('#searchResults').html(html);
 		$('#resultsButton').show();
