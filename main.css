@@ -1,17 +1,22 @@
+
+body {
+  font-family: 'Baloo Bhai', cursive;
+}
+
 h1 {
 	padding-top: 100px;
 	text-align: center;
 }
 
 .searchYoutube {
-	margin-auto;
+	margin: 0 auto;
 	text-align: center;
 }
 
-body {
-	font-family: 'Baloo Bhai', cursive;
+/*#searchResults {
+	border: solid 1px gray;
 }
-
-#searchResults {
-	border: gray;
+*/
+#resultsButton {
+  margin: 20px 0;
 }
