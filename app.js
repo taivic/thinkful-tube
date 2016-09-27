@@ -1,10 +1,10 @@
 $(document).ready(function(){
+	$('#resultsButton').hide();	
+
 	$('#searchForm').submit(function(event){
 	  	event.preventDefault();
 	    var searchTerm = $('#searchYoutube').val();
 	    getRequest(searchTerm);
-	    //display button more results next page
-	    $('#moreResults').append("<p>" + "<button type='button' id='resultsButton'>" + "Show More Results" + "</button>" + "</p>");
  	});
 
 	function getRequest(searchTerm){
@@ -20,21 +20,16 @@ $(document).ready(function(){
 		});
 	}
 
-	/*//show more results
-	$(document).on("click", ".resultsButton", function() {
-		$('#searchResults').append()
-	})*/
-
 	function showResults(results){
 		var html = "";
 		$.each(results, function(index,value){
 	    	html += '<p>' + value.snippet.title + '</p>';
 	    	console.log(value.snippet.title);
 	    	//show thumbnails, make images clickable
-	    	html += '<img src= value.snippet.thumbnails.medium.url>';
-	    	//<a href="'www.youtube.com/embed/' + value.id.videoID">
+	    	html += '<img src= "' + value.snippet.thumbnails.medium.url + '">';
 	  	});
 		$('#searchResults').html(html);
+		$('#resultsButton').show();
 	}
 
 });
